@@ -1,0 +1,178 @@
+:root {
+  --main-color: #23232e;
+  --color-blue: #75a0ff;
+  --color-pink: #bd4ae0;
+  --color-red: #eb5952;
+  --color-green: #0dc95b;
+  --color-yellow: #eebb55;
+  --main-font: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  font-family: var(--main-font);
+  background-color: var(--main-color);
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  background-position: 25vw 0vh;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+h1 {
+  margin-top: 9%;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.logo {
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  font-weight: 600;
+}
+
+.cor01 {
+  color: var(--color-green);
+}
+.cor02 {
+  color: var(--color-red);
+}
+.cor03 {
+  color: var(--color-yellow);
+}
+.cor04 {
+  color: var(--color-blue);
+}
+.cor05 {
+  color: var(--color-pink);
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--main-font);
+  background: #23232e;
+  height: 8vh;
+  border-bottom: 1px solid #fff;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  letter-spacing: 1px;
+  margin-left: 32px;
+}
+
+/* .active {
+  color: #fbff00;
+} */
+
+/* nav .nav-wrapper {
+  position: relative;
+  height: 120%;
+  margin-left: 35px;
+} */
+
+.menu:hover {
+  background-color: var(--main-color-blue);
+  border: 0px solid var(--main-color-grey);
+}
+
+.content-main {
+  font-family: var(--main-font);
+  height: 100%;
+  width: 97%;
+  text-align: justify;
+  font-size: 22px;
+  margin-left: 1%;
+  margin-top: -15%;
+  color: #fff;
+}
+
+/******************** TOOLTIP GIF ********************/
+
+.tooltip-gif {
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip-gif .bottom {
+  /* background image */
+  all: initial;
+  max-width: 480px;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 0px 7px 5px 7px;
+  background: white;
+  border-radius: 20px;
+  position: absolute;
+  z-index: 2;
+  box-sizing: border-box;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 1);
+  display: none;
+}
+
+.tooltip-gif:hover .bottom {
+  display: block;
+}
+
+.tooltip-gif .bottom img {
+  /* change image */
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  z-index: 3;
+  position: relative;
+  border-top: 8px solid white;
+}
+
+.ic {
+  /* diamond */
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -12px;
+  width: 24px;
+  height: 12px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ic::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(45deg);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 1);
+}
