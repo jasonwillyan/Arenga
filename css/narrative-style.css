@@ -1,5 +1,5 @@
 :root {
-  --main-color: #23232e;
+  --main-color: #e9f2f9;
   --color-blue: #75a0ff;
   --color-pink: #bd4ae0;
   --color-red: #eb5952;
@@ -18,17 +18,8 @@
 body {
   font-family: var(--main-font);
   background-color: var(--main-color);
-  background-repeat: no-repeat;
-  background-size: 100vw 100vh;
-  background-position: 25vw 0vh;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
   width: 100vw;
   height: 100vh;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
 }
 
@@ -43,7 +34,7 @@ a {
   font-size: 16px;
 }
 
-a:hover {
+nav a:hover {
   color: yellow;
 }
 
@@ -75,9 +66,9 @@ nav {
   justify-content: space-around;
   align-items: center;
   font-family: var(--main-font);
-  background: #23232e;
+  background: rgb(77, 76, 76);
   height: 8vh;
-  border-bottom: 1px solid #fff;
+  border-bottom: 5px solid #c8b080;
 }
 
 .nav-list {
@@ -90,16 +81,6 @@ nav {
   margin-left: 32px;
 }
 
-/* .active {
-  color: #fbff00;
-} */
-
-/* nav .nav-wrapper {
-  position: relative;
-  height: 120%;
-  margin-left: 35px;
-} */
-
 .menu:hover {
   background-color: var(--main-color-blue);
   border: 0px solid var(--main-color-grey);
@@ -108,15 +89,17 @@ nav {
 .content-main {
   font-family: var(--main-font);
   height: 100%;
-  width: 97%;
+  width: 90%;
   text-align: justify;
   font-size: 22px;
   margin-left: 1%;
-  margin-top: -15%;
-  color: #fff;
+  margin-top: -8%;
+  color: #000;
 }
 
-/******************** TOOLTIP GIF ********************/
+main p {
+  margin-top: 1%;
+}
 
 .tooltip-gif {
   display: inline-block;
@@ -154,7 +137,7 @@ nav {
   border-top: 8px solid white;
 }
 
-.ic {
+.diamond {
   /* diamond */
   position: absolute;
   bottom: 100%;
@@ -164,9 +147,166 @@ nav {
   height: 12px;
   overflow: hidden;
   z-index: 1;
+  transform: rotate(0deg);
 }
 
-.ic::after {
+.diamond::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(45deg);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 1);
+}
+
+/* ***************************** */
+
+.tooltip-gif .top {
+  /* background image */
+  all: initial;
+  max-width: 480px;
+  top: -190px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 0px 7px 5px 7px;
+  background: white;
+  border-radius: 20px;
+  position: absolute;
+  z-index: 2;
+  box-sizing: border-box;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 1);
+  display: none;
+}
+
+.tooltip-gif:hover .top {
+  display: block;
+}
+
+.tooltip-gif .top img {
+  /* change image */
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  z-index: 3;
+  position: relative;
+  border-top: 8px solid white;
+}
+
+.diamond-top {
+  /* diamond */
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -12px;
+  width: 24px;
+  height: 12px;
+  overflow: hidden;
+  z-index: 1;
+  transform: rotate(180deg);
+}
+
+.diamond-top::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(45deg);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 1);
+}
+
+.buttons {
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 350px;
+}
+
+.buttons ul li {
+  display: inline-block;
+  margin: 0 20px;
+  margin-top: 20px;
+}
+
+
+.btn {
+  color: #000;
+  transition: all 0.3s;
+  position: relative;
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 250px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 14px 60px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: var(--main-font);
+}
+.btn span {
+  transition: all 0.3s;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(0, 0, 0, 0.5);
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+  transform: scale(0.1, 1);
+}
+.btn:hover span {
+  letter-spacing: 2px;
+}
+.btn:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.btn:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
+}
+
+.diamond-top {
+  /* diamond */
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -12px;
+  width: 24px;
+  height: 12px;
+  overflow: hidden;
+  z-index: 1;
+  transform: rotate(180deg);
+}
+
+.diamond-top::after {
   content: "";
   position: absolute;
   width: 12px;

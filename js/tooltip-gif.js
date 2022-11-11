@@ -9,10 +9,12 @@ void (function generate_tooltip_gif() {
     const div = document.createElement("div");
     const img = document.createElement("img");
     const tag_i = document.createElement("i");
+ 
+    if(position === "bottom") tag_i.classList.add("diamond");
+    else tag_i.classList.add("diamond-top");
 
     div.classList.add(position);
     img.src = gif;
-    tag_i.classList.add("ic");
     div.id = "tooltipgif";
     div.appendChild(img);
     div.appendChild(tag_i);
