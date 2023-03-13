@@ -1,4 +1,4 @@
-void (function generate_tooltip_gif() {
+/* void (function generate_tooltip_gif() {
   const array = document.getElementsByClassName("tooltip-gif");
 
   for (let i = 0; i < array.length; i++) {
@@ -20,6 +20,38 @@ void (function generate_tooltip_gif() {
     div.appendChild(tag_i);
     a.appendChild(div);
   }
+})(); */
+
+void(function generate_tooltip_gif() {
+  const elements = document.querySelectorAll(".tooltip-gif, .tooltip-gif a");
+
+  elements.forEach(element => {
+    const gif = element.getAttribute("data-gif");
+    const position = element.getAttribute("data-position");
+    console.log(gif, position);
+
+    const div = document.createElement("div");
+    const img = document.createElement("img");
+    const tag_i = document.createElement("i");
+
+    if (position === "bottom") {
+      tag_i.classList.add("diamond");
+      div.classList.add("tooltip-container", "bottom");
+      img.src = gif;
+      div.id = "tooltipgif";
+      div.appendChild(img);
+      div.appendChild(tag_i);
+      element.appendChild(div);
+    } else if(position === "top"){
+      tag_i.classList.add("diamond-top");
+      div.classList.add("tooltip-container", "top");
+      img.src = gif;
+      div.id = "tooltipgif";
+      div.appendChild(img);
+      div.appendChild(tag_i);
+      element.appendChild(div);
+    }
+  });
 })();
 
 // eslint-disable-next-line no-unused-vars
